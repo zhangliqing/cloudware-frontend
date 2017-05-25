@@ -1,11 +1,7 @@
 <template>
 	<div>
     <div v-show="show">
-      <div class="alert alert-dismissible alert-warning" style="width: 960px;margin: 0 auto">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <h4>注意!</h4>
-        <p>云件关闭之后，本次创建的文件将被<b>删除</b>，请及时将所需文件下载到本地。</p>
-      </div>
+
       <div class="container" style="margin:10px 20px" >
 
         <div v-for="cw in cloudwares">
@@ -31,11 +27,41 @@
     </div>
 
     <div v-show="!show">
-      <div style="margin: 5px 10px">
-        <a @click="backToList" class="fa fa-arrow-left " style="margin-left: 10px">云件列表</a>
+      <div style="margin: 5px 10px; " >
+
+        <a @click="backToList" class="fa fa-arrow-left" style="margin-left: 10px">云件列表</a>
         <a @click="fullScreen" class="btn btn-app " style="margin-left: 10px"><i class="fa fa-arrows-alt"></i> 全屏</a>
-        <a class="btn btn-app " id="snapshot"><i  class="fa fa-save"></i> 文件</a>
+        <a class="btn btn-app " data-toggle="modal" data-target="#fileModal"><i  class="fa fa-save" ></i> 文件</a>
+        <div class="alert alert-dismissible alert-warning" style="display: inline-block;width: 600px; padding: 6px">
+          <button type="button" class="close" data-dismiss="alert" style="right: 0px; font-size: 24px">&times;</button>
+          <p><strong>注意!</strong> 云件关闭之后，本次创建的文件将被<b>删除</b>，请及时将所需文件下载到本地。</p>
+        </div>
+
+
+        <div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">我的文件</h4>
+              </div>
+              <div class="modal-body">
+                <ul>
+                  <fileItem :model="treeData"></fileItem>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+
+
       <div id="matlab" v-show="activeCloudware=='matlab'" style="width: 960px; margin: 0 auto"></div>
       <div id="autocad" v-show="activeCloudware=='autocad'" style="width: 960px; margin: 0 auto"></div>
     </div>
@@ -43,8 +69,10 @@
 
 
 </template>
+
 <script type="text/javascript">
 	import creating from "./creating.vue"
+  import fileItem from "./fileItem.vue"
   var instance=null
 
 	export default{
@@ -53,7 +81,35 @@
       return{
         cloudwares:[],
         show:true,
-        activeCloudware:''
+        activeCloudware:'',
+        treeData:{
+          name: 'My Tree',
+          children: [
+            { name: 'hello' },
+            { name: 'wat' },
+            {
+              name: 'child folder',
+              children: [
+                {
+                  name: 'child folder',
+                  children: [
+                    { name: 'hello' },
+                    { name: 'wat' }
+                  ]
+                },
+                { name: 'hello' },
+                { name: 'wat' },
+                {
+                  name: 'child folder',
+                  children: [
+                    { name: 'hello' },
+                    { name: 'wat' }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       }
     },
 
@@ -94,7 +150,7 @@
 
       }
 		},
-		components:{creating}
+		components:{creating,fileItem}
 	}
 </script>
 

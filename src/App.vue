@@ -22,9 +22,9 @@ export default {
   created() {
       this.checkLogin();//组件创建时检查登录
     },
-  watch:{
-      "$route":'checkLogin'
-  },
+//  watch:{
+//      "$route":'checkLogin'
+//  },
     methods: {
       checkLogin(){//检查是否登录
         console.log("检查登录")

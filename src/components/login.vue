@@ -7,8 +7,8 @@
     <div id="loginbox" style="margin-top:20px;" class="mainbox col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <div class="panel-title">登录</div>
-          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">没有账号?</a></div>
+          <div class="panel-title" style="display: inline-block">登录</div>
+          <div style="float:right; margin-top: 10px"><a @click="toRegister" style="color: white;text-decoration: none">没有账号?</a></div>
         </div>
 
         <div style="padding-top:30px" class="panel-body">
@@ -54,7 +54,7 @@
 
 <script>
   import auth from '../auth'
-
+  import router from '../router'
   export default {
   name:"login",
     data()
@@ -70,7 +70,6 @@
   ,
 
   methods: {
-
     submit()
     {
       var credentials = {
@@ -78,15 +77,14 @@
         password: this.credentials.password
       }
       auth.login(this, credentials, 'home')
+    },
+    toRegister:function () {
+      router.push('register')
     }
   }
 
   }
 </script>
 <style>
-  .main-body {
-    margin: auto;
-    padding: 30px 0 102px;
-    width: 300px;
-  }
+
 </style>

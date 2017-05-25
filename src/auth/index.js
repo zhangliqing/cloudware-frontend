@@ -7,7 +7,7 @@
 
 'use strict';
 import router from '../router'
-import Vue from 'vue'
+
 const API_URL = 'http://api.cloudwarelabs.org/v1/'
 const LOGIN_URL = API_URL + 'token'
 const USER_URL=API_URL+'users/current'

@@ -3,9 +3,9 @@
 		<mainhead></mainhead>
 		<cloudwarepanel></cloudwarepanel>
 
-		<!--<footer class="main-footer">-->
-		    <!--<strong>Copyright &copy; 2017 <a href="#">Cloudware Lab</a>.</strong> All rights reserved.-->
-		<!--</footer>-->
+		<footer class="footer">
+		    <strong>Copyright &copy; 2017 <a href="#">Cloudware Lab</a>.</strong> All rights reserved.
+		</footer>
 	</div>
 </template>
 <script type="text/javascript">
@@ -15,7 +15,6 @@
 
 */
 	import mainhead from './mainHead.vue';
-	import myfile from './myFile.vue';
 	import cloudwarepanel from './cloudwarePanel.vue';
 
 	import auth from '../auth';
@@ -24,7 +23,11 @@
 
 	export default{
 		name:'home',
-		components:{mainhead,myfile,cloudwarepanel}
+		components:{mainhead,cloudwarepanel}
 	}
 </script>
+<style>
+  .footer{position:absolute;bottom:0;width:100%;height:30px;clear:both; text-align: center}
+
+</style>
 

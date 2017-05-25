@@ -15,10 +15,9 @@
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">欢迎，{{user.username}} <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
-	            <li style="padding-left: 5px">姓名：{{user.username}}</li>
-	            <li style="padding-left: 5px">学号：{{user.id}}</li>
+	            <li style="padding-left: 5px"><b>姓名：</b>{{user.username}}</li>
+	            <li style="padding-left: 5px"><b>学号：</b>{{user.id}}</li>
 	            <li style="padding-left: 5px">user description</li>
-	            <li class="divider"></li>
 	            <li style="text-align: center"><button class="btn btn-primary" @click="logout()"><strong>sign out</strong></button></li>
 	          </ul>
 	        </li>
