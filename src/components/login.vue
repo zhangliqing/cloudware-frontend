@@ -2,7 +2,6 @@
   <div class="container">
     <div style="margin-top:20px; text-align: center" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" >
       <h1>Cloudware Lab</h1>
-      <h3>开启云时代软件新体验</h3>
     </div>
     <div id="loginbox" style="margin-top:20px;" class="mainbox col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
       <div class="panel panel-primary">
@@ -28,18 +27,18 @@
             </div>
 
 
-            <div class="input-group" style="margin-left: 15px">
-              <div class="checkbox">
-                <label>
-                  <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                </label>
-              </div>
-            </div>
+            <!--<div class="input-group" style="margin-left: 15px">-->
+              <!--<div class="checkbox">-->
+                <!--<label>-->
+                  <!--<input id="login-remember" type="checkbox" name="remember" value="1"> Remember me-->
+                <!--</label>-->
+              <!--</div>-->
+            <!--</div>-->
 
 
-            <div style="margin-top:10px; margin-left: 15px" class="form-group">
-                  <a @click="submit()" class="btn btn-success " >登录</a>
-                  <a href="#" style="margin-left: 15px">忘记密码</a>
+            <div style="text-align: center;margin-top: 5px" class="form-group">
+                  <a @click="submit()" class="btn btn-primary " style="width: 50%;display: block; margin: 0 auto">登录</a><br>
+                  <a href="#" style="display: block">忘记密码?</a>
             </div>
 
 
@@ -86,5 +85,9 @@
   }
 </script>
 <style>
-
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
 </style>

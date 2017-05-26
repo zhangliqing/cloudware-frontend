@@ -11,7 +11,7 @@ import router from '../router'
 const API_URL = 'http://api.cloudwarelabs.org/v1/'
 const LOGIN_URL = API_URL + 'token'
 const USER_URL=API_URL+'users/current'
-
+const SIGNUP_URL=API_URL+'users'
 export default {
 
   user: {
@@ -38,26 +38,19 @@ export default {
         if(redirect) {
           router.push(redirect)
         }
-
       },
       response=>{context.error=response})
   },
 
   signup(context, creds, redirect) {
-    context.$http.post(SIGNUP_URL, creds, (data) => {
-      console.log("收到data.id_token："+data.id_token)
-      //console.log("收到data.id_token："+data.access_token)
-      localStorage.setItem('id_token', data.id_token)
-
-      this.user.authenticated = true
-
-      if(redirect) {
-        router.push(redirect)
+    context.$http.post(SIGNUP_URL, creds).then(
+        response=>{
+          console.log('注册成功')
+          router.push(redirect)
+      },response=>{
+          context.error=response
       }
-
-    }).error((err) => {
-      context.error = err
-    })
+    )
   },
 
   logout(redirect) {

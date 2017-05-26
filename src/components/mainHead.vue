@@ -14,11 +14,11 @@
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">欢迎，{{user.username}} <span class="caret"></span></a>
-	          <ul class="dropdown-menu" role="menu">
+	          <ul class="dropdown-menu" role="menu" style="padding-bottom: 0px">
 	            <li style="padding-left: 5px"><b>姓名：</b>{{user.username}}</li>
 	            <li style="padding-left: 5px"><b>学号：</b>{{user.id}}</li>
 	            <li style="padding-left: 5px">user description</li>
-	            <li style="text-align: center"><button class="btn btn-primary" @click="logout()"><strong>sign out</strong></button></li>
+	            <li style="text-align: center;"><button class="btn btn-primary" @click="logout()" style="width: 100%"><strong>sign out</strong></button></li>
 	          </ul>
 	        </li>
 	      </ul>
