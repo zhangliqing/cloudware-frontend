@@ -8,7 +8,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Cloudware</a>
+	      <a class="navbar-brand">Cloudware</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
@@ -18,7 +18,7 @@
 	            <li style="padding-left: 5px"><b>姓名：</b>{{user.username}}</li>
 	            <li style="padding-left: 5px"><b>学号：</b>{{user.id}}</li>
 	            <li style="padding-left: 5px">user description</li>
-	            <li style="text-align: center;"><button class="btn btn-primary" @click="logout()" style="width: 100%"><strong>sign out</strong></button></li>
+	            <li style="text-align: center;"><button class="btn btn-primary" @click="logout()" style="width: 60%;margin-bottom: 5px"><strong>登 出</strong></button></li>
 	          </ul>
 	        </li>
 	      </ul>

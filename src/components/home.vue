@@ -10,17 +10,11 @@
 	</div>
 </template>
 <script type="text/javascript">
-/*
-<myfile></myfile>
 
-
-*/
 	import mainhead from './mainHead.vue';
 	import cloudwarepanel from './cloudwarePanel.vue';
 
 	import auth from '../auth';
-
-
 
 	export default{
 		name:'home',
@@ -28,11 +22,7 @@
 	}
 </script>
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
+
 
 </style>
 

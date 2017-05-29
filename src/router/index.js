@@ -17,7 +17,7 @@ export default new Router({
     {path: '/home', component: Home, meta: {requiresAuth: true}},
     {path: '/login', component: Login},
     {path: '/register',component:Register},
-    {path: '*', redirect: '/home'},
+    {path: '*', redirect: '/login'},
 
   ]
 })
