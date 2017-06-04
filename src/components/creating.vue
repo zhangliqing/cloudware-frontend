@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="panel-primary col-lg-2 col-md-3 col-sm-4 " style="margin-top:20px; border: 1px">
+    <div class="panel-primary col-lg-3 col-md-3 col-sm-4 " style="margin-top:20px; border: 1px">
       <div class="panel-heading" style="height: 48px;text-align: center">
         <h3 class="panel-title" style="margin-top: 0.5em;">新建云件</h3>
       </div>

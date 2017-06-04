@@ -27,17 +27,20 @@
 	</nav>
 </template>
 <script type="text/javascript">
-	import auth from "../auth"
+  import store from '../store'
+  import router from '../router'
 	export default{
 		name:'mainHead',
 		data(){
 			return{
-				user:auth.user
+				user: store.user
 			}
 		},
 		methods:{
 			logout(){
-				auth.logout('login')
+        store.user.logout().then(() => {
+          router.push('/login')
+        })
 			},
 		}
 	}

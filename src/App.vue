@@ -7,46 +7,35 @@
 
 <script>
 
-import auth from './auth'
-import router from './router'
-export default {
-  name: 'app',
-  data(){
-    return{
-      isLogin: false,
-      userInfo: { //保存用户信息
-        username: null,
-        uid: null,
-      }
-    }
-  },
-  created() {
-      this.checkLogin();//组件创建时检查登录
-    },
-//  watch:{
-//      "$route":'checkLogin'
-//  },
-    methods: {
-      checkLogin(){//检查是否登录
-        console.log("检查登录")
-        if(!auth.user.authenticated){
-          router.push('login');
-        }else{
-          router.push('home');
+  import router from './router'
+  import store from './store'
+  export default {
+    name: 'app',
+    data(){
+      return {
+        isLogin: false,
+        userInfo: { //保存用户信息
+          username: null,
+          uid: null,
         }
-      },
-
-    }
-}
+      }
+    },
+    created() {
+      if (router.path !== '/login' || router.path !== '/register') {
+        store.user.getInfo().then((user) => console.log(user), router.push('/login'))
+      }
+    },
+  }
 </script>
 
 <style>
-  html, body,#app {
+  html, body, #app {
     margin: 0;
     padding: 0;
     height: 100%;
   }
-  *{
+
+  * {
     box-sizing: border-box;
   }
 </style>

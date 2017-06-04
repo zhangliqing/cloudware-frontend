@@ -5,7 +5,7 @@
       <div class="container" style="margin:10px 20px" >
 
         <div v-for="cw in cloudwares">
-          <div class="alert col-lg-2 col-md-3 col-sm-4" style="padding-top: 0px">
+          <div class="alert col-lg-3 col-md-3 col-sm-4" style="padding-top: 0px">
             <div class="panel-primary  " style="margin-top:20px;">
               <div class="panel-heading" style="height: 48px;">
                 <h3 class="panel-title" style="margin-top: 0.5em;display: inline">{{cw.name}}</h3>

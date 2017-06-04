@@ -47,8 +47,8 @@
 </template>
 
 <script>
-  import auth from '../auth'
   import router from '../router'
+  import store from '../store'
   export default {
   name:"login",
   data(){
@@ -188,7 +188,7 @@
         username: this.credentials.username,
         password: this.credentials.password
       }
-      auth.login(this, credentials, 'home')
+      store.user.login(credentials).then(() => router.push('/home'), () => alert('用户名或密码错误'))
     },
     toRegister:function () {
       router.push('register')
